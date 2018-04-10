@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane fx:id="bpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#ShortCut" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+         <center>
+            <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></MediaView>
+         </center>
+         <bottom>
+            <VBox fx:id="bottom" prefHeight="56.0" prefWidth="600.0" styleClass="vbox" stylesheets="@../css/Coloring.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="14.0" prefWidth="580.0">
+                     <children>
+                        <Slider fx:id="video_bar" blockIncrement="0.0" prefHeight="14.0" prefWidth="493.0" />
+                        <TextField fx:id="video_dur" prefHeight="25.0" prefWidth="69.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="14.0" prefWidth="580.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="playpause" mnemonicParsing="false" text="Pause" />
+                        <Button mnemonicParsing="false" onAction="#Previous" text="&lt;" />
+                        <Button fx:id="s" mnemonicParsing="false" onAction="#Stop" text="⏹" />
+                        <Button mnemonicParsing="false" onAction="#Next" text="&gt;" />
+                        <Button mnemonicParsing="false" onAction="#FullScreen" text="F" />
+                        <Button mnemonicParsing="false" onAction="#Playlistfun" text="Playlist" />
+                        <Button fx:id="loop_btn" mnemonicParsing="false" text="🔄" />
+                        <Button mnemonicParsing="false" onAction="#Random" text="🔀" />
+                        <Label prefHeight="25.0" prefWidth="53.0" text="Volume:" />
+                        <Slider fx:id="volume" />
+                        <ImageView fx:id="imageView" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <top>
+            <MenuBar fx:id="menu" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Media">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#Multiple" text="Open" />
+                          <MenuItem mnemonicParsing="false" onAction="#Save" text="Save" />
+                          <MenuItem mnemonicParsing="false" onAction="#Load" text="Load" />
+                          <MenuItem mnemonicParsing="false" onAction="#Close" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#About" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+        </BorderPane>
